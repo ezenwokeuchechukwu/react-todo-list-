@@ -1,19 +1,85 @@
+/* General body styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+/* Form styling */
 #new-todo-form {
   display: flex;
   flex-direction: column;
-  max-width: 300px;
+  max-width: 350px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
 }
 
 #new-todo-form > * {
-  margin: 0.15rem;
+  margin: 0.3rem 0;
+  font-size: 1rem;
 }
 
+#todo-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Button styling */
+button {
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #6C63FF;
+  color: white;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #5751d9;
+}
+
+[data-button-delete],
+[data-button-edit] {
+  margin-left: 0.5rem;
+}
+
+/* Todo list styling */
 #list {
+  list-style: none;
   padding: 0;
+  max-width: 350px;
+  width: 100%;
 }
 
 .list-item {
-  list-style: none;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 0.5rem 0;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background 0.2s;
+}
+
+.list-item-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .list-item-label:hover,
@@ -22,7 +88,7 @@
 }
 
 .list-item-label:hover > [data-list-item-text] {
-  color: #333;
+  color: #6C63FF;
   text-decoration: line-through;
 }
 
@@ -31,24 +97,14 @@
   color: #aaa;
 }
 
-[data-button-delete] {
-  margin-left: 0.5rem;
-}
-
-button {
-  cursor: pointer;
-}
-
-[data-button-edit] {
-  margin-left: 0.5rem;
-}
-
+/* Filter form */
 .filter-form {
   display: flex;
   gap: 1rem;
   align-items: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #6C63FF;
   padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .filter-form-group {
